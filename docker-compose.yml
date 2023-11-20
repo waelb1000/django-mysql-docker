@@ -3,7 +3,7 @@ version: '3.7'
 services:
   mysql:
     image: mysql:8.0
-    container_name: mysql-container
+    container_name: mysql-container1
     restart: always
     env_file:
       - .env
@@ -15,7 +15,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - /home/wael/django-docker-compose/dump.sql
+      - /home/wael/django-mysql-docker/dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
 
   django_gunicorn:
